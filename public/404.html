@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var searchParams = new URLSearchParams(window.location.search);
+        if (searchParams.has('redirect')) {
+          return;
+        }
+
+        var segments = window.location.pathname.split('/').filter(Boolean);
+        if (segments.length === 0) {
+          return;
+        }
+
+        var repoPath = '/' + segments[0];
+        var remainderSegments = segments.slice(1);
+        var remainderPath = remainderSegments.length
+          ? '/' + remainderSegments.join('/')
+          : '/';
+
+        if (remainderPath === '/' || remainderPath === '/404.html') {
+          return;
+        }
+
+        var redirectTarget = remainderPath + window.location.search + window.location.hash;
+        var redirectUrl = repoPath + '/?redirect=' + encodeURIComponent(redirectTarget);
+        window.location.replace(redirectUrl);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
