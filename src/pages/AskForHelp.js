@@ -215,6 +215,18 @@ export default function AskForHelp() {
             />
           </label>
 
+          <div className="space-y-2 text-left">
+            <p className="text-sm font-medium text-slate-700">Additional photos <span className="text-xs font-normal text-slate-400">(optional)</span></p>
+            <label className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 px-6 py-10 text-center text-sm text-slate-500 transition hover:border-slate-400 hover:bg-slate-100">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-8 w-8 text-slate-400">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 16.5v-9m-4.5 4.5h9M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0Z" />
+              </svg>
+              <span className="text-sm font-semibold text-slate-600">Upload photos</span>
+              <span className="text-xs text-slate-400">PNG, JPG up to 10MB</span>
+              <input type="file" name="photos" accept="image/png, image/jpeg" multiple className="hidden" />
+            </label>
+          </div>
+
           <button
             type="submit"
             className="w-full rounded-full bg-rose-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-rose-400"
