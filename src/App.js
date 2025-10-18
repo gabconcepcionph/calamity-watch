@@ -2,6 +2,11 @@ import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import Calamities from './pages/Calamities';
+import Volunteers from './pages/Volunteers';
+import Inventories from './pages/Invetories';
+import AskForHelp from './pages/AskForHelp';
 
 const AppRoutes = () => {
   const navigate = useNavigate();
@@ -26,6 +31,11 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/calamities" element={<Calamities />} />
+      <Route path="/volunteers" element={<Volunteers />} />
+      <Route path="/inventories" element={<Inventories />} />
+      <Route path="/ask-for-help" element={<AskForHelp />} />
     </Routes>
   );
 };
