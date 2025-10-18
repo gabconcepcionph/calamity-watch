@@ -1,6 +1,83 @@
+import { useEffect, useState } from 'react';
+import { Circle, MapContainer, Marker, TileLayer, useMap } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 import PublicLayout from '../layouts/Public';
+import askForHelpMock from '../store/mocks/ask-for-help.json';
+import { Icon } from 'leaflet';
+import Modal from '../components/Modal';
+import useHotlinesStore from '../store/useHotlinesStore';
+
+const DEFAULT_CENTER = [14.5995, 120.9842]; // Manila fallback
+
+const markerIcon = new Icon({
+  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
+
+function RecenterMap({ center }) {
+  const map = useMap();
+
+  useEffect(() => {
+    map.setView(center);
+  }, [center, map]);
+
+  return null;
+}
 
 export default function AskForHelp() {
+  const [geolocation, setGeolocation] = useState(null);
+  const [markerPosition, setMarkerPosition] = useState(DEFAULT_CENTER);
+  const [userHasMovedMarker, setUserHasMovedMarker] = useState(false);
+  const [geoError, setGeoError] = useState(null);
+  const [isHotlinesOpen, setIsHotlinesOpen] = useState(false);
+  const { hotlines } = useHotlinesStore();
+
+  useEffect(() => {
+    if (!navigator.geolocation) {
+      setGeoError('Geolocation is not supported by this browser.');
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      (coords) => {
+        const { latitude, longitude } = coords.coords;
+        const currentPosition = [latitude, longitude];
+        setGeolocation(currentPosition);
+        if (!userHasMovedMarker) {
+          setMarkerPosition(currentPosition);
+        }
+      },
+      (error) => {
+        if (error.code === error.PERMISSION_DENIED) {
+          setGeoError('Location permission denied. Enter your location manually.');
+        } else {
+          setGeoError('Unable to determine current location.');
+        }
+      }
+    );
+  }, []);
+
+  const mapCenter = markerPosition ?? DEFAULT_CENTER;
+
+  const handleMarkerDragEnd = (event) => {
+    const { lat, lng } = event.target.getLatLng();
+    setMarkerPosition([lat, lng]);
+    setUserHasMovedMarker(true);
+  };
+
+  const handleCenterOnLocation = () => {
+    if (!geolocation) {
+      return;
+    }
+    setMarkerPosition(geolocation);
+    setUserHasMovedMarker(false);
+  };
+
   return (
     <PublicLayout>
       <section className="mx-auto flex max-w-3xl flex-col gap-8 text-center">
@@ -9,7 +86,53 @@ export default function AskForHelp() {
           <p className="text-sm text-slate-500">
             Submit urgent information so response teams can reach you faster.
           </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <button
+              type="button"
+              onClick={() => setIsHotlinesOpen(true)}
+              className="inline-flex items-center justify-center rounded-full border border-rose-200 px-5 py-2 text-xs font-semibold text-rose-500 transition hover:border-rose-300 hover:text-rose-600"
+            >
+              View emergency hotlines
+            </button>
+          </div>
         </header>
+
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 text-left shadow-sm">
+          <h2 className="text-base font-semibold text-slate-900">Current location (100 m radius)</h2>
+          <p className="mt-1 text-xs text-slate-500">
+            Confirm the detected area or adjust the details below if the location is inaccurate.
+          </p>
+          <div className="mt-4 h-64 w-full overflow-hidden rounded-xl">
+            <MapContainer
+              center={mapCenter}
+              zoom={16}
+              scrollWheelZoom={false}
+              className="h-full w-full"
+            >
+              <RecenterMap center={mapCenter} />
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker
+                position={markerPosition}
+                draggable
+                eventHandlers={{ dragend: handleMarkerDragEnd }}
+                icon={markerIcon}
+              />
+              <Circle center={markerPosition} radius={100} pathOptions={{ color: '#f43f5e', fillOpacity: 0.2 }} />
+            </MapContainer>
+          </div>
+          <button
+            type="button"
+            onClick={handleCenterOnLocation}
+            className="mt-4 inline-flex items-center justify-center rounded-full border border-rose-200 px-5 py-2 text-xs font-semibold text-rose-500 transition hover:border-rose-300 hover:text-rose-600 disabled:cursor-not-allowed disabled:opacity-60"
+            disabled={!geolocation}
+          >
+            Center on my location
+          </button>
+          <p className="mt-3 text-xs font-medium text-rose-500">{geoError}</p>
+        </div>
 
         <form className="space-y-4 rounded-2xl border border-slate-200 bg-white p-8 text-left shadow-sm">
           <div className="grid gap-4 sm:grid-cols-2">
@@ -18,7 +141,7 @@ export default function AskForHelp() {
               <input
                 type="text"
                 name="fullName"
-                placeholder="Juan Dela Cruz"
+                placeholder={askForHelpMock.fullName}
                 className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-700 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200"
               />
             </label>
@@ -27,7 +150,7 @@ export default function AskForHelp() {
               <input
                 type="tel"
                 name="contactNumber"
-                placeholder="0917 000 0000"
+                placeholder={askForHelpMock.contactNumber}
                 className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-700 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200"
               />
             </label>
@@ -38,7 +161,7 @@ export default function AskForHelp() {
             <input
               type="text"
               name="location"
-              placeholder="Barangay San Roque, Marikina"
+              placeholder={askForHelpMock.location}
               className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-700 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200"
             />
           </label>
@@ -48,7 +171,7 @@ export default function AskForHelp() {
             <textarea
               name="situation"
               rows="4"
-              placeholder="Provide details about the emergency, number of people affected, and urgent needs."
+              placeholder={askForHelpMock.situation}
               className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-700 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200"
             />
           </label>
@@ -58,7 +181,7 @@ export default function AskForHelp() {
             <input
               type="text"
               name="needs"
-              placeholder="Rescue, medical support, food, water, etc."
+              placeholder={askForHelpMock.needs}
               className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-700 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200"
             />
           </label>
@@ -75,6 +198,25 @@ export default function AskForHelp() {
           For life-threatening emergencies, call your local rescue hotline immediately.
         </p>
       </section>
+
+      <Modal
+        isOpen={isHotlinesOpen}
+        onClose={() => setIsHotlinesOpen(false)}
+        title="Emergency Hotlines"
+      >
+        <div className="space-y-4 text-sm">
+          {hotlines.map(({ agency, contacts }) => (
+            <div key={agency} className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-left">
+              <p className="text-sm font-semibold text-slate-800">{agency}</p>
+              <ul className="mt-2 space-y-1 text-xs text-slate-500">
+                {contacts.map((contact) => (
+                  <li key={contact}>{contact}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </Modal>
     </PublicLayout>
   );
 }

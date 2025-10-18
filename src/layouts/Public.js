@@ -11,9 +11,12 @@ export default function PublicLayout({ children }) {
     <div className="min-h-screen bg-white text-slate-900">
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-3 px-6 py-6 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.45em] text-slate-400">
+          <a
+            href="/"
+            className="text-lg font-semibold uppercase tracking-[0.45em] text-slate-900 transition hover:text-slate-600"
+          >
             Calamity Watch
-          </p>
+          </a>
           <nav className="flex items-center gap-10 text-sm font-semibold text-slate-600">
             {navigationItems.map((item) => (
               <NavLink

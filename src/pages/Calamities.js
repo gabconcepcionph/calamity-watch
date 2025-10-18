@@ -9,6 +9,12 @@ export default function Calamities() {
           <p className="text-sm text-slate-500">
             Review live incidents, response status, and coordination teams.
           </p>
+          <a
+            href="/ask-for-help"
+            className="inline-flex items-center justify-center rounded-full bg-rose-500 px-8 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-rose-400"
+          >
+            Ask for help
+          </a>
         </header>
 
         <div className="grid gap-6 sm:grid-cols-2">
