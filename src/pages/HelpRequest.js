@@ -8,11 +8,11 @@ const helpRequests = [
     location: 'Barangay Harborview, New Cordis',
     submittedAt: 'Oct 21, 2025 • 14:32',
     priority: 'High',
-    status: 'Awaiting Rescue',
+    status: 'Naghihintay ng Pagsagip',
     coordinates: { lat: 10.3121, lng: 123.9056 },
     situation:
-      'Rapid flash flooding trapped residents on the second floor of a riverside duplex. Waterline rising 10 cm every 15 minutes.',
-    needs: ['Rescue boat', 'Medical triage', 'Infant supplies'],
+      'Mabilis na pagtaas ng baha ang nakasilo sa mga residente sa ikalawang palapag ng duplex malapit sa ilog. Tumataas ang tubig ng 10 cm bawat 15 minuto.',
+    needs: ['Bangkang pangligtas', 'Medical triage', 'Suplay para sa sanggol'],
   },
   {
     id: 'HR-2025-2402',
@@ -21,24 +21,24 @@ const helpRequests = [
     location: 'Sitio Lumen, East Marava',
     submittedAt: 'Oct 21, 2025 • 14:48',
     priority: 'Critical',
-    status: 'Responder En Route',
+    status: 'Papunta na ang Responder',
     coordinates: { lat: 10.3245, lng: 123.8944 },
     situation:
-      'Six families sheltering on rooftop after landslide debris blocked stairways. Torrential rain ongoing.',
-    needs: ['Rope rescue team', 'Thermal blankets', 'Rapid damage assessment'],
+      'Anim na pamilya ang nasa bubong matapos barahan ng taunang lupa ang hagdanan. Patuloy ang malakas na ulan.',
+    needs: ['Koponang may lubid', 'Thermal blanket', 'Mabilis na pagtatasa ng pinsala'],
   },
   {
     id: 'HR-2025-2403',
     requester: 'Nia Calder',
     contact: '0908 613 7725',
-    location: 'Apex Heights Tower B, Floor 11',
+    location: 'Apex Heights Tower B, Ikalabing-isang Palapag',
     submittedAt: 'Oct 21, 2025 • 15:05',
     priority: 'High',
-    status: 'Coordinating Volunteers',
+    status: 'Nagkokoordina ng mga Boluntaryo',
     coordinates: { lat: 10.3023, lng: 123.9188 },
     situation:
-      'Elevator outage after aftershock; elderly residents immobile with limited medication. Ventilation adequate but power unstable.',
-    needs: ['Medical volunteers', 'Portable oxygen', 'Stair stretcher'],
+      'Nabagabag ang elevator pagkatapos ng aftershock; hindi makagalaw ang matatandang residente at limitado ang gamot. Ayos ang bentilasyon ngunit hindi matatag ang kuryente.',
+    needs: ['Medical volunteer', 'Portable oxygen', 'Stair stretcher'],
   },
   {
     id: 'HR-2025-2404',
@@ -47,11 +47,11 @@ const helpRequests = [
     location: 'Barangay Southpoint Covered Court',
     submittedAt: 'Oct 21, 2025 • 15:11',
     priority: 'Medium',
-    status: 'Needs Verification',
+    status: 'Kailangang Beripikahin',
     coordinates: { lat: 10.2951, lng: 123.9032 },
     situation:
-      'Evacuees report dwindling drinking water and no charging stations for communication devices.',
-    needs: ['Water refills', 'Charging kiosks', 'Child-safe sleeping mats'],
+      'Iniulat ng mga evacuee na nauubos ang inuming tubig at walang charging station para sa mga komunikasyon.',
+    needs: ['Pag-refill ng tubig', 'Charging kiosk', 'Child-safe sleeping mat'],
   },
   {
     id: 'HR-2025-2405',
@@ -60,11 +60,11 @@ const helpRequests = [
     location: 'Isla Verde Wharf, Bay 6',
     submittedAt: 'Oct 21, 2025 • 15:19',
     priority: 'Critical',
-    status: 'Awaiting Dispatch',
+    status: 'Naghihintay ng Dispatsya',
     coordinates: { lat: 10.2879, lng: 123.9301 },
     situation:
-      'Storm surge left 18 fisherfolk stranded with hypothermia risks; visibility low due to heavy rains.',
-    needs: ['Rescue RIB', 'Thermal gear', 'Hot meals'],
+      'Nagpatong ang storm surge, naiwan ang 18 mangingisda na may panganib sa hypothermia; mababa ang visibility dahil sa malakas na ulan.',
+    needs: ['Rescue RIB', 'Thermal gear', 'Mainit na pagkain'],
   },
   {
     id: 'HR-2025-2406',
@@ -73,11 +73,11 @@ const helpRequests = [
     location: 'Northvale Elementary Gym Shelter',
     submittedAt: 'Oct 21, 2025 • 15:27',
     priority: 'High',
-    status: 'Supply Convoy Queued',
+    status: 'Nakapila ang Supply Convoy',
     coordinates: { lat: 10.2756, lng: 123.9112 },
     situation:
-      'Shelter population doubled within an hour. Current stocks can only serve 8 hours of meals.',
-    needs: ['Ready-to-eat meals', 'Bottled water', 'Volunteer cooks'],
+      'Nadoble ang dami ng taong nasa shelter sa loob ng isang oras. Tatagal lamang sa loob ng 8 oras ang kasalukuyang mga suplay.',
+    needs: ['Ready-to-eat meal', 'Bottled water', 'Volunteer cook'],
   },
   {
     id: 'HR-2025-2407',
@@ -86,11 +86,11 @@ const helpRequests = [
     location: 'Cascade Ridge Barangay Hall',
     submittedAt: 'Oct 21, 2025 • 15:36',
     priority: 'Medium',
-    status: 'Monitoring Situation',
+    status: 'Minomonitor ang Sitwasyon',
     coordinates: { lat: 10.2688, lng: 123.8877 },
     situation:
-      'Mini-grid outage affecting refrigerated medicines for chronic patients; generators at 40% fuel.',
-    needs: ['Fuel resupply', 'Pharmacist consult', 'Cold-chain containers'],
+      'May brownout sa mini-grid na nakakaapekto sa mga gamot na naka-refrigerate para sa mga pasyenteng may chronic na kondisyon; 40% na lang ang gasolina ng generator.',
+    needs: ['Pag-angkat ng gasolina', 'Konsultasyon sa parmasyutiko', 'Cold-chain container'],
   },
   {
     id: 'HR-2025-2408',
@@ -99,11 +99,11 @@ const helpRequests = [
     location: 'Twinlights Subdivision, Block 9',
     submittedAt: 'Oct 21, 2025 • 15:44',
     priority: 'Critical',
-    status: 'Responder En Route',
+    status: 'Papunta na ang Responder',
     coordinates: { lat: 10.2547, lng: 123.8994 },
     situation:
-      'Gas leak detected after quake; neighborhood evacuated curbside without respiratory protection.',
-    needs: ['Fire suppression unit', 'Gas detectors', 'Respirator masks'],
+      'May natukoy na pagtagas ng gas pagkatapos ng lindol; nasa bangketa ang mga residente nang walang respiratory protection.',
+    needs: ['Yunit panapat ng apoy', 'Gas detector', 'Respirator mask'],
   },
   {
     id: 'HR-2025-2409',
@@ -112,11 +112,11 @@ const helpRequests = [
     location: 'Lumina Tech Park Dormitory',
     submittedAt: 'Oct 21, 2025 • 15:51',
     priority: 'Low',
-    status: 'Queued for Assessment',
+    status: 'Nakapila para sa Pagsusuri',
     coordinates: { lat: 10.2442, lng: 123.9159 },
     situation:
-      'Displaced employees require transportation passes to reach designated shelter.',
-    needs: ['Transport coordination', 'Identification kits', 'Psychosocial support'],
+      'Kailangan ng mga nawalan ng tirahan na empleyado ng transport pass para makarating sa itinalagang shelter.',
+    needs: ['Koordinasyon sa transportasyon', 'Identification kit', 'Psychosocial support'],
   },
   {
     id: 'HR-2025-2410',
@@ -125,11 +125,11 @@ const helpRequests = [
     location: 'Skybridge Residences, Tower C Roofdeck',
     submittedAt: 'Oct 21, 2025 • 15:58',
     priority: 'High',
-    status: 'Awaiting Airlift',
+    status: 'Naghihintay ng Airlift',
     coordinates: { lat: 10.2386, lng: 123.9274 },
     situation:
-      'Four patients awaiting medevac after makeshift clinic exhausted supplies; rooftop helipad partially obstructed.',
-    needs: ['Helicopter extraction', 'Advanced trauma kit', 'Structural clearing team'],
+      'Apat na pasyente ang naghihintay ng medevac matapos maubos ang suplay ng pansamantalang klinika; bahagyang nakaharang ang helipad sa bubong.',
+    needs: ['Helicopter extraction', 'Advanced trauma kit', 'Koponang maglilinis ng estruktura'],
   },
 ];
 
@@ -141,15 +141,15 @@ const priorityColors = {
 };
 
 const statusStyles = {
-  'Responder En Route': 'text-emerald-600',
-  'Awaiting Rescue': 'text-rose-600',
-  'Awaiting Dispatch': 'text-amber-600',
-  'Awaiting Airlift': 'text-rose-600',
-  'Supply Convoy Queued': 'text-amber-600',
-  'Monitoring Situation': 'text-blue-600',
-  'Needs Verification': 'text-slate-500',
-  'Queued for Assessment': 'text-slate-500',
-  'Coordinating Volunteers': 'text-indigo-600',
+  'Papunta na ang Responder': 'text-emerald-600',
+  'Naghihintay ng Pagsagip': 'text-rose-600',
+  'Naghihintay ng Dispatsya': 'text-amber-600',
+  'Naghihintay ng Airlift': 'text-rose-600',
+  'Nakapila ang Supply Convoy': 'text-amber-600',
+  'Minomonitor ang Sitwasyon': 'text-blue-600',
+  'Kailangang Beripikahin': 'text-slate-500',
+  'Nakapila para sa Pagsusuri': 'text-slate-500',
+  'Nagkokoordina ng mga Boluntaryo': 'text-indigo-600',
 };
 
 export default function HelpRequest() {
@@ -159,16 +159,16 @@ export default function HelpRequest() {
         <header className="space-y-4 rounded-b-3xl bg-gradient-to-r from-rose-600 via-rose-500 to-amber-400 px-6 py-10 text-white shadow-lg">
           <div className="flex flex-col items-center gap-4 text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-1 text-xs font-semibold uppercase tracking-wide">
-              Immediate Attention Required
+              Kinakailangang Agarang Tugon
             </span>
-            <h1 className="text-3xl font-semibold">Help Request Queue</h1>
+            <h1 className="text-3xl font-semibold">Pila ng Kahilingan ng Tulong</h1>
             <p className="text-sm opacity-90">
-              Review and prioritize urgent calls for assistance. Responders can filter by priority to allocate teams effectively.
+              Suriin at unahin ang mga agarang kahilingan ng tulong. Maaaring salain ng mga responder ayon sa prayoridad upang maayos na maitalaga ang mga koponan.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-3 text-xs font-semibold uppercase">
-            <span className="rounded-full bg-white/20 px-4 py-2">10 Active Requests</span>
-            <span className="rounded-full bg-white/20 px-4 py-2">Updated Oct 21, 2025 • 16:05</span>
+            <span className="rounded-full bg-white/20 px-4 py-2">10 Aktibong Kahilingan</span>
+            <span className="rounded-full bg-white/20 px-4 py-2">Na-update Okt 21, 2025 • 16:05</span>
           </div>
         </header>
 
@@ -183,7 +183,7 @@ export default function HelpRequest() {
                   <p className="text-xs font-semibold uppercase tracking-wide text-rose-500">{request.id}</p>
                   <h2 className="text-lg font-semibold text-slate-900">{request.requester}</h2>
                   <p className="text-sm text-slate-500">{request.location}</p>
-                  <p className="text-xs text-slate-400">Submitted {request.submittedAt}</p>
+                  <p className="text-xs text-slate-400">Isinumite noong {request.submittedAt}</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <span
@@ -191,7 +191,7 @@ export default function HelpRequest() {
                       priorityColors[request.priority]
                     }`}
                   >
-                    {request.priority} Priority
+                    Prayoridad: {request.priority}
                   </span>
                   <span className={`text-sm font-semibold ${statusStyles[request.status] || 'text-slate-600'}`}>
                     {request.status}
@@ -206,7 +206,7 @@ export default function HelpRequest() {
                 </div>
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <div>
-                    <span className="font-semibold text-slate-800">Needs Reported:</span>
+                    <span className="font-semibold text-slate-800">Iniulat na Pangangailangan:</span>
                     <ul className="mt-2 flex flex-wrap gap-2 text-xs uppercase tracking-wide">
                       {request.needs.map((need) => (
                         <li
@@ -219,7 +219,7 @@ export default function HelpRequest() {
                     </ul>
                   </div>
                   <div className="text-xs text-slate-500">
-                    <p className="font-semibold text-slate-700">Immediate Contact</p>
+                    <p className="font-semibold text-slate-700">Agarang Kontak</p>
                     <p>{request.contact}</p>
                     <a
                       href={`https://www.google.com/maps?q=${request.coordinates.lat},${request.coordinates.lng}`}
@@ -227,7 +227,7 @@ export default function HelpRequest() {
                       rel="noreferrer"
                       className="mt-1 inline-flex items-center gap-1 text-rose-500 underline decoration-dotted underline-offset-4 hover:text-rose-600"
                     >
-                      View Map ({request.coordinates.lat.toFixed(4)}, {request.coordinates.lng.toFixed(4)})
+                      Tingnan sa Mapa ({request.coordinates.lat.toFixed(4)}, {request.coordinates.lng.toFixed(4)})
                     </a>
                   </div>
                 </div>

@@ -201,7 +201,7 @@ export default function Inventories() {
 
         <div className="grid gap-6 sm:grid-cols-2">
           <article className="rounded-2xl border border-gray-100 bg-white p-6 shadow-md">
-            <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">Bodega ng Dispatsya (3)</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">Mga Bodega (3)</p>
             <div className="mt-4 max-h-40 space-y-3 overflow-y-auto pr-1 text-sm text-gray-600">
               <div className="rounded-xl border border-gray-100 bg-gray-50/70 p-3">
                 <p><span className="font-semibold text-gray-800">Pier 3 Relief Annex:</span> Bayline Logistics Hub HQ</p>
@@ -219,7 +219,7 @@ export default function Inventories() {
           </article>
 
           <article className="rounded-2xl border border-gray-100 bg-white p-6 shadow-md">
-            <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">Mga Account para sa Tulong Pinansyal (2)</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">Donation Accounts (2)</p>
             <h2 className="mt-2 text-lg font-semibold text-gray-900">Beripikadong Daluyan ng Donasyon</h2>
             <p className="mt-3 text-sm text-gray-600">
               Idirekta ang cash assistance sa mga opisyal na banko sa ibaba upang pondohan ang pagbili at mabilis na pagde-deploy.
