@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 const navigationItems = [
   { label: 'Calamities', to: '/calamities' },
-  //{ label: 'Volunteers', to: '/volunteers' },
+  { label: 'Help Requests', to: '/help-request', urgent: true },
   { label: 'Inventory Tracking', to: '/inventories' },
 ];
 
@@ -13,20 +13,28 @@ export default function PublicLayout({ children }) {
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-3 px-6 py-6 text-center">
           <a
             href="/"
-            className="text-lg font-semibold uppercase tracking-[0.45em] text-slate-900 transition hover:text-slate-600"
+            className="text-3xl font-semibold uppercase tracking-[0.45em] text-slate-900 transition hover:text-slate-600"
           >
-            Calamity Watch
+            Calamity Watch Philippines
           </a>
-          <nav className="flex items-center gap-10 text-sm font-semibold text-slate-600">
+          <nav className="flex flex-wrap items-center justify-center gap-4 text-sm font-semibold text-slate-600">
             {navigationItems.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
-                className={({ isActive }) =>
-                  `transition-colors ${
+                className={({ isActive }) => {
+                  if (item.urgent) {
+                    return `inline-flex items-center gap-2 rounded-full border border-rose-200 px-5 py-2 text-xs uppercase tracking-wide transition ${
+                      isActive
+                        ? 'bg-rose-600 text-white shadow-lg'
+                        : 'bg-rose-500 text-white shadow hover:bg-rose-400'
+                    }`;
+                  }
+
+                  return `transition-colors ${
                     isActive ? 'text-slate-900' : 'hover:text-slate-900'
-                  }`
-                }
+                  }`;
+                }}
               >
                 {item.label}
               </NavLink>

@@ -47,6 +47,7 @@ export default function Calamities() {
                 <span className="font-semibold text-gray-800">Operational Status:</span> ICS activated at Cebu Capitol; PDRRMO coordinating with OCD Region VII and NGOs.
               </li>
             </ul>
+            <img src="https://src.meteopilipinas.gov.ph/repo/mtsat-colored/24hour/1-him-colored.png" className="mt-4" alt="" />
           </section>
 
           {/* Situation Reports */}
