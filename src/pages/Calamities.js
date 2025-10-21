@@ -17,26 +17,78 @@ export default function Calamities() {
           </a>
         </header>
 
-        <div className="grid gap-6 sm:grid-cols-2">
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-              Typhoon Serene
-            </p>
-            <h2 className="mt-2 text-lg font-semibold text-slate-900">Eastern Visayas</h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h2 className="text-lg font-semibold text-slate-900">Calamity Overview</h2>
             <p className="mt-3 text-sm text-slate-500">
-              Landfall expected within 12 hours. Ensure evacuation centers remain stocked and transportation routes open.
+              Summarize each event with its official name, geographic focus, start date, and current status to orient response leads quickly.
             </p>
-          </article>
+            <ul className="mt-4 space-y-2 text-sm text-slate-500">
+              <li>
+                <span className="font-semibold text-slate-700">Name &amp; Location:</span> Identify affected province or municipality clusters.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-700">Start Date:</span> Track first impact or alert issuance.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-700">Status:</span> Mark as ongoing, contained, or monitoring.
+              </li>
+            </ul>
+          </section>
 
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-              Flood Response
-            </p>
-            <h2 className="mt-2 text-lg font-semibold text-slate-900">Cagayan Valley</h2>
+          <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h2 className="text-lg font-semibold text-slate-900">Situation Reports</h2>
             <p className="mt-3 text-sm text-slate-500">
-              Rapid assessment teams deployed. Road clearing scheduled and relief convoys en route.
+              Present periodic updates detailing current conditions, damages, affected population, and priority needs.
             </p>
-          </article>
+            <ul className="mt-4 space-y-2 text-sm text-slate-500">
+              <li>
+                <span className="font-semibold text-slate-700">Impact Summary:</span> Highlight casualties, displacement, and infrastructure status.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-700">Needs Assessment:</span> Capture urgent supply and manpower requirements.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-700">Response Actions:</span> Log deployments, coordination calls, and policy updates.
+              </li>
+            </ul>
+          </section>
+
+          <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h2 className="text-lg font-semibold text-slate-900">Affected Areas</h2>
+            <p className="mt-3 text-sm text-slate-500">
+              Map or list impacted barangays and municipalities with severity metrics and population figures.
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-slate-500">
+              <li>
+                <span className="font-semibold text-slate-700">Severity Index:</span> Rank flooding, wind damage, or landslide risk per area.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-700">Population Affected:</span> Note households and individuals requiring support.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-700">Resource Needs:</span> Match required relief goods, medical aid, and shelter capacity.
+              </li>
+            </ul>
+          </section>
+
+          <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h2 className="text-lg font-semibold text-slate-900">Relief Operations</h2>
+            <p className="mt-3 text-sm text-slate-500">
+              Track ongoing relief activities, donation flows, volunteer mobilization, and logistics milestones.
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-slate-500">
+              <li>
+                <span className="font-semibold text-slate-700">Donations:</span> Record received goods, cash aids, and dispatch schedules.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-700">Volunteers:</span> Monitor deployment counts, skills, and rotation plans.
+              </li>
+              <li>
+                <span className="font-semibold text-slate-700">Logistics &amp; Coordination:</span> Outline transport routes, warehousing, and inter-agency touchpoints.
+              </li>
+            </ul>
+          </section>
         </div>
       </section>
     </PublicLayout>
