@@ -21,17 +21,17 @@ export default function Calamities() {
           <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <h2 className="text-lg font-semibold text-slate-900">Calamity Overview</h2>
             <p className="mt-3 text-sm text-slate-500">
-              Public awareness bulletin placeholder. Replace the sample lines below with verified information from official sources before publishing.
+              Placeholder briefing for the recent Cebu earthquake. Replace the sample details with verified Situation Awareness and Damage Assessment (SADA) inputs before publishing.
             </p>
-            <ul className="mt-4 space-y-2 text-sm text-slate-500">
-              <li>
-                <span className="font-semibold text-slate-700">Current Situation:</span> Briefly describe the calamity and immediately affected communities.
+            <ul className="mt-4 space-y-3 text-sm text-slate-500">
+              <li className="rounded-lg border border-slate-200 bg-slate-50/80 p-3">
+                <span className="font-semibold text-slate-700">Event Summary:</span> Magnitude 6.1 tectonic quake recorded at 13:58 PST with epicenter west of Cebu City; aftershocks anticipated within the next 24 hours.
               </li>
-              <li>
-                <span className="font-semibold text-slate-700">Safety Advisory:</span> Outline evacuation notices, emergency hotlines, and precautionary steps.
+              <li className="rounded-lg border border-slate-200 bg-slate-50/80 p-3">
+                <span className="font-semibold text-slate-700">Impact Snapshot:</span> Initial reports cite structural cracks in central business district high-rises and partial power interruptions in neighboring municipalities.
               </li>
-              <li>
-                <span className="font-semibold text-slate-700">Government &amp; NGO Updates:</span> Share confirmed response actions and where to access assistance.
+              <li className="rounded-lg border border-slate-200 bg-slate-50/80 p-3">
+                <span className="font-semibold text-slate-700">Operational Status:</span> Incident Command System activated at Cebu Provincial Capitol; PDRRMO coordinating with OCD Region VII and partner NGOs.
               </li>
             </ul>
           </section>
@@ -44,12 +44,12 @@ export default function Calamities() {
               </span>
             </div>
             <p className="mt-3 text-sm text-slate-600">
-              Live emergency timeline styled after Reddit Live. Replace each placeholder with verified, time-stamped updates from response teams.
+              Cebu earthquake live feed placeholder. Substitute each entry with confirmed, time-stamped Situation Report (SitRep) notes from field liaisons.
             </p>
             <div className="mt-5 space-y-4 rounded-xl border border-rose-100 bg-rose-50/80 p-4">
               <header className="flex items-center justify-between text-xs font-semibold uppercase tracking-wide text-rose-600">
                 <span>Latest Updates</span>
-                <span>Philippine Standard Time</span>
+                <span>Back to Top of Scroll</span>
               </header>
               <div className="max-h-56 space-y-3 overflow-y-auto pr-1">
                 <article className="flex gap-3 rounded-lg border border-rose-100 bg-white/85 p-3 shadow-sm">
@@ -57,7 +57,7 @@ export default function Calamities() {
                     Oct 21, 2025 • 14:05
                   </time>
                   <p className="text-sm text-slate-600">
-                    Placeholder: Situation room confirms storm surge advisories for coastal barangays. Awaiting further reports.
+                    Placeholder: PDRRMO confirms magnitude 6.1 quake; no tsunami threat issued. Rapid assessment teams mobilized across Metro Cebu.
                   </p>
                 </article>
                 <article className="flex gap-3 rounded-lg border border-rose-100 bg-white/85 p-3 shadow-sm">
@@ -65,7 +65,7 @@ export default function Calamities() {
                     Oct 21, 2025 • 14:12
                   </time>
                   <p className="text-sm text-slate-600">
-                    Placeholder: Field monitors note rising river levels near National Highway KM45. Road remains passable with caution.
+                    Placeholder: Cebu City EOC reports evacuations in Barangays Capitol Site and Kamputhaw due to compromised mid-rise structures.
                   </p>
                 </article>
                 <article className="flex gap-3 rounded-lg border border-rose-100 bg-white/85 p-3 shadow-sm">
@@ -73,7 +73,7 @@ export default function Calamities() {
                     Oct 21, 2025 • 14:18
                   </time>
                   <p className="text-sm text-slate-600">
-                    Placeholder: Power cooperative reports intermittent outages in Barangay San Isidro. Repair crews on standby.
+                    Placeholder: VECO states localized power outages in Mabolo and Lahug; restoration crews dispatched with safety escorts.
                   </p>
                 </article>
                 <article className="flex gap-3 rounded-lg border border-rose-100 bg-white/85 p-3 shadow-sm">
@@ -81,7 +81,7 @@ export default function Calamities() {
                     Oct 21, 2025 • 14:26
                   </time>
                   <p className="text-sm text-slate-600">
-                    Placeholder: Evacuation center at Central Elementary now shelters 85 families. Additional bedding requested.
+                    Placeholder: Cebu City Sports Complex opened as surge evacuation center; 120 families recorded on initial intake list.
                   </p>
                 </article>
                 <article className="flex gap-3 rounded-lg border border-rose-100 bg-white/85 p-3 shadow-sm">
@@ -89,7 +89,7 @@ export default function Calamities() {
                     Oct 21, 2025 • 14:34
                   </time>
                   <p className="text-sm text-slate-600">
-                    Placeholder: Local weather bureau issues yellow rainfall advisory for the metro area; community sirens activated.
+                    Placeholder: PHIVOLCS issues aftershock advisory; residents advised to stay away from damaged buildings pending structural audits.
                   </p>
                 </article>
                 <article className="flex gap-3 rounded-lg border border-rose-100 bg-white/85 p-3 shadow-sm">
@@ -97,7 +97,7 @@ export default function Calamities() {
                     Oct 21, 2025 • 14:41
                   </time>
                   <p className="text-sm text-slate-600">
-                    Placeholder: Volunteer medical team dispatched to Barangay Sta. Lucia for first-aid support and triage setup.
+                    Placeholder: DOH Central Visayas deploys medical rapid response team to Vicente Sotto Memorial Medical Center triage area.
                   </p>
                 </article>
                 <article className="flex gap-3 rounded-lg border border-rose-100 bg-white/85 p-3 shadow-sm">
@@ -105,7 +105,7 @@ export default function Calamities() {
                     Oct 21, 2025 • 14:47
                   </time>
                   <p className="text-sm text-slate-600">
-                    Placeholder: Reports of minor landslide debris on Mountain View Road. Clearing equipment en route.
+                    Placeholder: Landslide debris reported along Transcentral Highway; DPWH clearing crew en route with heavy equipment.
                   </p>
                 </article>
                 <article className="flex gap-3 rounded-lg border border-rose-100 bg-white/85 p-3 shadow-sm">
@@ -113,7 +113,7 @@ export default function Calamities() {
                     Oct 21, 2025 • 14:53
                   </time>
                   <p className="text-sm text-slate-600">
-                    Placeholder: Hotline 161 receiving increased calls for relief packs. Logistics cluster coordinating dispatch.
+                    Placeholder: Hotline 161 logs surge in structural damage reports; engineering teams prioritized for hospitals and schools.
                   </p>
                 </article>
                 <article className="flex gap-3 rounded-lg border border-rose-100 bg-white/85 p-3 shadow-sm">
@@ -121,7 +121,7 @@ export default function Calamities() {
                     Oct 21, 2025 • 14:58
                   </time>
                   <p className="text-sm text-slate-600">
-                    Placeholder: Rapid assessment team shares preliminary damage mapping for Sitio Riverside. Verification pending.
+                    Placeholder: Drone-assisted rapid assessment maps damaged zones in Barangay Guadalupe; verification mission scheduled.
                   </p>
                 </article>
                 <article className="flex gap-3 rounded-lg border border-rose-100 bg-white/85 p-3 shadow-sm">
@@ -129,7 +129,7 @@ export default function Calamities() {
                     Oct 21, 2025 • 15:04
                   </time>
                   <p className="text-sm text-slate-600">
-                    Placeholder: Provincial EOC schedules next briefing for 15:30. Media partners advised to standby for updates.
+                    Placeholder: Provincial EOC schedules media briefing at 15:30; request made for structural engineers to report to Capitol Command Center.
                   </p>
                 </article>
               </div>
