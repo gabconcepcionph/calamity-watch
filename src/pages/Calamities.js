@@ -71,7 +71,7 @@ export default function Calamities() {
                   Bumalik sa Itaas
                 </span>
               </header>
-              <div ref={timelineRef} className="max-h-56 space-y-3 overflow-y-auto pr-1">
+              <div ref={timelineRef} className="h-full space-y-3 overflow-y-auto pr-1">
                 {[
                   "Kumpirmado ng PDRRMO ang magnitude 6.1 na lindol; walang banta ng tsunami.",
                   "Naiulat ng EOC ang mga paglikas sa mga Barangay Capitol Site at Kamputhaw.",
