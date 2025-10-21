@@ -12,7 +12,7 @@ const helpRequests = [
     coordinates: { lat: 10.3121, lng: 123.9056 },
     situation:
       'Mabilis na pagtaas ng baha ang nakasilo sa mga residente sa ikalawang palapag ng duplex malapit sa ilog. Tumataas ang tubig ng 10 cm bawat 15 minuto.',
-    needs: ['Bangkang pangligtas', 'Medical triage', 'Suplay para sa sanggol'],
+    needs: ['Rescue boat', 'Medical triage', 'Infant supplies'],
   },
   {
     id: 'HR-2025-2402',
@@ -25,7 +25,7 @@ const helpRequests = [
     coordinates: { lat: 10.3245, lng: 123.8944 },
     situation:
       'Anim na pamilya ang nasa bubong matapos barahan ng taunang lupa ang hagdanan. Patuloy ang malakas na ulan.',
-    needs: ['Koponang may lubid', 'Thermal blanket', 'Mabilis na pagtatasa ng pinsala'],
+    needs: ['Rope rescue team', 'Thermal blankets', 'Rapid damage assessment'],
   },
   {
     id: 'HR-2025-2403',
@@ -38,7 +38,7 @@ const helpRequests = [
     coordinates: { lat: 10.3023, lng: 123.9188 },
     situation:
       'Nabagabag ang elevator pagkatapos ng aftershock; hindi makagalaw ang matatandang residente at limitado ang gamot. Ayos ang bentilasyon ngunit hindi matatag ang kuryente.',
-    needs: ['Medical volunteer', 'Portable oxygen', 'Stair stretcher'],
+    needs: ['Medical volunteers', 'Portable oxygen', 'Stair stretcher'],
   },
   {
     id: 'HR-2025-2404',
@@ -51,7 +51,7 @@ const helpRequests = [
     coordinates: { lat: 10.2951, lng: 123.9032 },
     situation:
       'Iniulat ng mga evacuee na nauubos ang inuming tubig at walang charging station para sa mga komunikasyon.',
-    needs: ['Pag-refill ng tubig', 'Charging kiosk', 'Child-safe sleeping mat'],
+    needs: ['Water refills', 'Charging kiosks', 'Child-safe sleeping mats'],
   },
   {
     id: 'HR-2025-2405',
@@ -64,7 +64,7 @@ const helpRequests = [
     coordinates: { lat: 10.2879, lng: 123.9301 },
     situation:
       'Nagpatong ang storm surge, naiwan ang 18 mangingisda na may panganib sa hypothermia; mababa ang visibility dahil sa malakas na ulan.',
-    needs: ['Rescue RIB', 'Thermal gear', 'Mainit na pagkain'],
+    needs: ['Rescue RIB', 'Thermal gear', 'Hot meals'],
   },
   {
     id: 'HR-2025-2406',
@@ -77,7 +77,7 @@ const helpRequests = [
     coordinates: { lat: 10.2756, lng: 123.9112 },
     situation:
       'Nadoble ang dami ng taong nasa shelter sa loob ng isang oras. Tatagal lamang sa loob ng 8 oras ang kasalukuyang mga suplay.',
-    needs: ['Ready-to-eat meal', 'Bottled water', 'Volunteer cook'],
+    needs: ['Ready-to-eat meals', 'Bottled water', 'Volunteer cooks'],
   },
   {
     id: 'HR-2025-2407',
@@ -90,7 +90,7 @@ const helpRequests = [
     coordinates: { lat: 10.2688, lng: 123.8877 },
     situation:
       'May brownout sa mini-grid na nakakaapekto sa mga gamot na naka-refrigerate para sa mga pasyenteng may chronic na kondisyon; 40% na lang ang gasolina ng generator.',
-    needs: ['Pag-angkat ng gasolina', 'Konsultasyon sa parmasyutiko', 'Cold-chain container'],
+    needs: ['Fuel resupply', 'Pharmacist consult', 'Cold-chain containers'],
   },
   {
     id: 'HR-2025-2408',
@@ -103,7 +103,7 @@ const helpRequests = [
     coordinates: { lat: 10.2547, lng: 123.8994 },
     situation:
       'May natukoy na pagtagas ng gas pagkatapos ng lindol; nasa bangketa ang mga residente nang walang respiratory protection.',
-    needs: ['Yunit panapat ng apoy', 'Gas detector', 'Respirator mask'],
+    needs: ['Fire suppression unit', 'Gas detectors', 'Respirator masks'],
   },
   {
     id: 'HR-2025-2409',
@@ -116,7 +116,7 @@ const helpRequests = [
     coordinates: { lat: 10.2442, lng: 123.9159 },
     situation:
       'Kailangan ng mga nawalan ng tirahan na empleyado ng transport pass para makarating sa itinalagang shelter.',
-    needs: ['Koordinasyon sa transportasyon', 'Identification kit', 'Psychosocial support'],
+    needs: ['Transport coordination', 'Identification kits', 'Psychosocial support'],
   },
   {
     id: 'HR-2025-2410',
@@ -129,7 +129,7 @@ const helpRequests = [
     coordinates: { lat: 10.2386, lng: 123.9274 },
     situation:
       'Apat na pasyente ang naghihintay ng medevac matapos maubos ang suplay ng pansamantalang klinika; bahagyang nakaharang ang helipad sa bubong.',
-    needs: ['Helicopter extraction', 'Advanced trauma kit', 'Koponang maglilinis ng estruktura'],
+    needs: ['Helicopter extraction', 'Advanced trauma kit', 'Structural clearing team'],
   },
 ];
 
