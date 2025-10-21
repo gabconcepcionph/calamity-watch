@@ -1,6 +1,15 @@
+import { useRef } from 'react';
 import PublicLayout from '../layouts/Public';
 
 export default function Calamities() {
+  const timelineRef = useRef(null);
+
+  const handleScrollTop = () => {
+    if (timelineRef.current) {
+      timelineRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <PublicLayout>
       <section className="mx-auto flex max-w-5xl flex-col gap-8">
@@ -49,9 +58,14 @@ export default function Calamities() {
             <div className="mt-5 space-y-4 rounded-xl border border-rose-100 bg-rose-50/80 p-4">
               <header className="flex items-center justify-between text-xs font-semibold uppercase tracking-wide text-rose-600">
                 <span>Latest Updates</span>
-                <span>Back to Top of Scroll</span>
+                <span
+                  onClick={handleScrollTop}
+                  className="cursor-pointer text-rose-600 transition hover:text-rose-500"
+                >
+                  Back to Top
+                </span>
               </header>
-              <div className="max-h-56 space-y-3 overflow-y-auto pr-1">
+              <div ref={timelineRef} className="max-h-56 space-y-3 overflow-y-auto pr-1">
                 <article className="flex gap-3 rounded-lg border border-rose-100 bg-white/85 p-3 shadow-sm">
                   <time className="flex-shrink-0 text-xs font-semibold uppercase tracking-wide text-rose-600">
                     Oct 21, 2025 • 14:05
