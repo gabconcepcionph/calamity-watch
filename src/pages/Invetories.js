@@ -201,20 +201,25 @@ export default function Inventories() {
 
         <div className="grid gap-6 sm:grid-cols-2">
           <article className="rounded-2xl border border-gray-100 bg-white p-6 shadow-md">
-            <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">Dispatch Warehouse</p>
-            <h2 className="mt-2 text-lg font-semibold text-gray-900">Bayline Logistics Hub</h2>
-            <p className="mt-3 text-sm text-gray-600">
-              Open 06:00–22:00 daily for donation intake and dispatch staging. Coordinates heavy vehicle queueing and load verification.
-            </p>
-            <ul className="mt-4 space-y-1 text-sm text-gray-600">
-              <li><span className="font-semibold text-gray-800">Address:</span> Pier 3 Relief Depot, Sergio Osmeña Blvd.</li>
-              <li><span className="font-semibold text-gray-800">Capacity:</span> 1,800 pallets, cold storage bay available.</li>
-              <li><span className="font-semibold text-gray-800">Point of Contact:</span> Logistics Desk • +63 999 555 8000</li>
-            </ul>
+            <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">Dispatch Warehouse (3)</p>
+            <div className="mt-4 max-h-40 space-y-3 overflow-y-auto pr-1 text-sm text-gray-600">
+              <div className="rounded-xl border border-gray-100 bg-gray-50/70 p-3">
+                <p><span className="font-semibold text-gray-800">Pier 3 Relief Annex:</span> Bayline Logistics Hub HQ</p>
+                <p className="mt-1 text-xs text-gray-500">Dockside throughput 1,800 pallets • Contact: Operations Desk • +63 999 555 8000</p>
+              </div>
+              <div className="rounded-xl border border-gray-100 bg-gray-50/70 p-3">
+                <p><span className="font-semibold text-gray-800">Summit Ridge Depot:</span> Mountain barangay staging yard</p>
+                <p className="mt-1 text-xs text-gray-500">Cold storage bay 2 • Contact: Shift Lead I. Navarro • +63 998 441 2233</p>
+              </div>
+              <div className="rounded-xl border border-gray-100 bg-gray-50/70 p-3">
+                <p><span className="font-semibold text-gray-800">Laguna Drive Lot:</span> Western corridor cross-dock</p>
+                <p className="mt-1 text-xs text-gray-500">Trailer slots 12 • Contact: Yard Marshal T. Sarmiento • +63 977 605 1144</p>
+              </div>
+            </div>
           </article>
 
           <article className="rounded-2xl border border-gray-100 bg-white p-6 shadow-md">
-            <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">Monetary Support Accounts</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">Monetary Support Accounts (2)</p>
             <h2 className="mt-2 text-lg font-semibold text-gray-900">Verified Donation Channels</h2>
             <p className="mt-3 text-sm text-gray-600">
               Route cash assistance through the following official bank partners to fund procurement and rapid deployment efforts.
@@ -235,7 +240,7 @@ export default function Inventories() {
 
         <section className="space-y-3 rounded-2xl border border-gray-100 bg-white p-6 shadow-md">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <h2 className="text-lg font-semibold text-gray-800">Donation Intake Tracking</h2>
+            <h2 className="text-lg font-semibold text-gray-800">Donation Intake Tracking (10)</h2>
             <span className="text-xs font-semibold uppercase tracking-wide text-[#E84E6B]">
               As of Oct 21, 2025 • 16:00
             </span>
@@ -274,7 +279,7 @@ export default function Inventories() {
 
         <section className="space-y-3 rounded-2xl border border-gray-100 bg-white p-6 shadow-md">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <h2 className="text-lg font-semibold text-gray-800">Dispatch Logistics Tracking</h2>
+            <h2 className="text-lg font-semibold text-gray-800">Dispatch Logistics Tracking (10)</h2>
             <span className="text-xs font-semibold uppercase tracking-wide text-[#E84E6B]">
               Next status call: Oct 21, 2025 • 17:30
             </span>
