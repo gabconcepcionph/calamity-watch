@@ -2,8 +2,8 @@ import { NavLink } from 'react-router-dom';
 
 const navigationItems = [
   { label: 'Calamities', to: '/calamities' },
-  { label: 'Volunteers', to: '/volunteers' },
-  { label: 'Inventories', to: '/inventories' },
+  //{ label: 'Volunteers', to: '/volunteers' },
+  { label: 'Inventory Tracking', to: '/inventories' },
 ];
 
 export default function PublicLayout({ children }) {
