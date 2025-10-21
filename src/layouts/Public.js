@@ -47,9 +47,9 @@ export default function PublicLayout({ children }) {
         {children}
       </main>
       <div className="fixed bottom-6 right-6 z-50 max-w-xs rounded-2xl border border-slate-800 bg-slate-900 px-5 py-4 text-white shadow-2xl">
-        <p className="text-sm font-semibold">Download the Calamity Watch mobile app</p>
+        <p className="text-sm font-semibold">I-download ang Calamity Watch mobile app</p>
         <p className="mt-1 text-xs text-slate-300">
-          Stay updated with real-time alerts and resources on the go.
+          Manatiling napapanahon sa mga real-time na alerto at mapagkukunan kahit saan ka magpunta.
         </p>
         <div className="mt-4 flex flex-col gap-2">
           <a
@@ -59,7 +59,7 @@ export default function PublicLayout({ children }) {
             className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-200"
           >
             <FaApple aria-hidden="true" />
-            <span>Download on the App Store</span>
+            <span>I-download sa App Store</span>
           </a>
           <a
             href="https://play.google.com"
@@ -68,7 +68,7 @@ export default function PublicLayout({ children }) {
             className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-400"
           >
             <FaGooglePlay aria-hidden="true" />
-            <span>Get it on Google Play</span>
+            <span>Kunin sa Google Play</span>
           </a>
         </div>
       </div>
