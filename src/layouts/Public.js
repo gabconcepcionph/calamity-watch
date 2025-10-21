@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { FaApple, FaGooglePlay } from 'react-icons/fa';
 
 const navigationItems = [
   { label: 'Calamities', to: '/calamities' },
@@ -45,6 +46,32 @@ export default function PublicLayout({ children }) {
       <main className="px-6 pt-0 pb-8">
         {children}
       </main>
+      <div className="fixed bottom-6 right-6 z-50 max-w-xs rounded-2xl border border-slate-800 bg-slate-900 px-5 py-4 text-white shadow-2xl">
+        <p className="text-sm font-semibold">Download the Calamity Watch mobile app</p>
+        <p className="mt-1 text-xs text-slate-300">
+          Stay updated with real-time alerts and resources on the go.
+        </p>
+        <div className="mt-4 flex flex-col gap-2">
+          <a
+            href="https://apps.apple.com"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-200"
+          >
+            <FaApple aria-hidden="true" />
+            <span>Download on the App Store</span>
+          </a>
+          <a
+            href="https://play.google.com"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-400"
+          >
+            <FaGooglePlay aria-hidden="true" />
+            <span>Get it on Google Play</span>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
