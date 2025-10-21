@@ -96,15 +96,18 @@ export default function AskForHelp() {
 
   const renderLocationSection = (inModal = false) => (
     <div
-      className={`rounded-2xl border border-slate-200 bg-white p-6 text-left shadow-sm ${
+      className={`rounded-2xl border border-gray-100 bg-white p-6 text-left shadow-md ${
         inModal ? '' : ''
       }`}
     >
-      <h2 className="text-base font-semibold text-slate-900">Current location (100 m radius)</h2>
-      <p className="mt-1 text-xs text-slate-500">
+      <h2 className="text-base font-semibold text-gray-900">
+        Current location (100 m radius)
+      </h2>
+      <p className="mt-1 text-xs text-gray-500">
         Confirm the detected area or adjust the details below if the location is inaccurate.
       </p>
-      <div className="mt-4 h-64 w-full overflow-hidden rounded-xl">
+
+      <div className="mt-4 h-64 w-full overflow-hidden rounded-2xl border border-gray-100">
         <MapContainer
           center={mapCenter}
           zoom={16}
@@ -122,19 +125,28 @@ export default function AskForHelp() {
             eventHandlers={{ dragend: handleMarkerDragEnd }}
             icon={markerIcon}
           />
-          <Circle center={markerPosition} radius={100} pathOptions={{ color: '#f43f5e', fillOpacity: 0.2 }} />
+          <Circle
+            center={markerPosition}
+            radius={100}
+            pathOptions={{ color: '#E94D65', fillOpacity: 0.2 }}
+          />
         </MapContainer>
       </div>
+
       <button
         type="button"
         onClick={handleCenterOnLocation}
-        className="mt-4 inline-flex items-center justify-center rounded-full border border-rose-200 px-5 py-2 text-xs font-semibold text-rose-500 transition hover:border-rose-300 hover:text-rose-600 disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-5 inline-flex items-center justify-center rounded-full border border-[#F4A1AC] bg-gradient-to-r from-[#E94D65] to-[#D83750] px-5 py-2 text-xs font-semibold text-white shadow-sm transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
         disabled={!geolocation}
       >
         Center on my location
       </button>
-      <p className="mt-3 text-xs font-medium text-rose-500">{geoError}</p>
+
+      {geoError && (
+        <p className="mt-3 text-xs font-medium text-[#E94D65]">{geoError}</p>
+      )}
     </div>
+
   );
 
   const handleCloseHotlines = () => {
@@ -144,17 +156,17 @@ export default function AskForHelp() {
 
   return (
     <PublicLayout>
-      <section className="mx-auto flex max-w-3xl flex-col gap-8 text-center">
-        <header className="space-y-3">
-          <h1 className="text-3xl font-semibold text-slate-900">Request Emergency Assistance</h1>
-          <p className="text-sm text-slate-500">
+      <section className="mx-auto flex max-w-3xl flex-col gap-8 text-center bg-[#F9F9FB] pb-10">
+        <header className="space-y-4 rounded-b-3xl bg-gradient-to-r from-[#E94D65] to-[#D83750] px-6 py-10 text-white shadow">
+          <h1 className="text-2xl font-semibold">Request Emergency Assistance</h1>
+          <p className="text-sm opacity-90">
             Submit urgent information so response teams can reach you faster.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <button
               type="button"
               onClick={() => setIsHotlinesOpen(true)}
-              className="inline-flex items-center justify-center rounded-full border border-rose-200 px-5 py-2 text-xs font-semibold text-rose-500 transition hover:border-rose-300 hover:text-rose-600"
+              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-2 text-xs font-semibold text-[#E94D65] shadow-sm transition hover:bg-rose-50"
             >
               View emergency hotlines
             </button>
@@ -163,82 +175,85 @@ export default function AskForHelp() {
 
         {!isHotlinesOpen ? renderLocationSection() : null}
 
-        <form className="space-y-4 rounded-2xl border border-slate-200 bg-white p-8 text-left shadow-sm">
+        <form className="space-y-5 rounded-2xl border border-gray-100 bg-white p-8 text-left shadow-md">
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="text-sm font-medium text-slate-700">
+            <label className="text-sm font-medium text-gray-700">
               Full name
               <input
                 type="text"
                 name="fullName"
                 placeholder={askForHelpMock.fullName}
-                className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-700 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200"
+                className="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-700 focus:border-[#E94D65] focus:ring-2 focus:ring-[#F4A1AC]"
               />
             </label>
-            <label className="text-sm font-medium text-slate-700">
+            <label className="text-sm font-medium text-gray-700">
               Contact number
               <input
                 type="tel"
                 name="contactNumber"
                 placeholder={askForHelpMock.contactNumber}
-                className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-700 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200"
+                className="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-700 focus:border-[#E94D65] focus:ring-2 focus:ring-[#F4A1AC]"
               />
             </label>
           </div>
 
-          <label className="text-sm font-medium text-slate-700">
+          <label className="text-sm font-medium text-gray-700">
             Location / barangay
             <input
               type="text"
               name="location"
               placeholder={askForHelpMock.location}
-              className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-700 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200"
+              className="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-700 focus:border-[#E94D65] focus:ring-2 focus:ring-[#F4A1AC]"
             />
           </label>
 
-          <label className="text-sm font-medium text-slate-700">
+          <label className="text-sm font-medium text-gray-700">
             Describe the situation
             <textarea
               name="situation"
               rows="4"
               placeholder={askForHelpMock.situation}
-              className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-700 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200"
+              className="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-700 focus:border-[#E94D65] focus:ring-2 focus:ring-[#F4A1AC]"
             />
           </label>
 
-          <label className="text-sm font-medium text-slate-700">
+          <label className="text-sm font-medium text-gray-700">
             Immediate needs
             <input
               type="text"
               name="needs"
               placeholder={askForHelpMock.needs}
-              className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-700 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200"
+              className="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-700 focus:border-[#E94D65] focus:ring-2 focus:ring-[#F4A1AC]"
             />
           </label>
 
           <div className="space-y-2 text-left">
-            <p className="text-sm font-medium text-slate-700">Additional photos <span className="text-xs font-normal text-slate-400">(optional)</span></p>
-            <label className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 px-6 py-10 text-center text-sm text-slate-500 transition hover:border-slate-400 hover:bg-slate-100">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-8 w-8 text-slate-400">
+            <p className="text-sm font-medium text-gray-700">
+              Additional photos <span className="text-xs font-normal text-gray-400">(optional)</span>
+            </p>
+            <label className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-gray-300 bg-gray-50 px-6 py-10 text-center text-sm text-gray-500 transition hover:border-[#E94D65]/50 hover:bg-rose-50">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-8 w-8 text-gray-400">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 16.5v-9m-4.5 4.5h9M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0Z" />
               </svg>
-              <span className="text-sm font-semibold text-slate-600">Upload photos</span>
-              <span className="text-xs text-slate-400">PNG, JPG up to 10MB</span>
+              <span className="text-sm font-semibold text-gray-600">Upload photos</span>
+              <span className="text-xs text-gray-400">PNG, JPG up to 10MB</span>
               <input type="file" name="photos" accept="image/png, image/jpeg" multiple className="hidden" />
             </label>
           </div>
 
           <button
             type="submit"
-            className="w-full rounded-full bg-rose-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-rose-400"
+            className="w-full rounded-full bg-gradient-to-r from-[#E94D65] to-[#D83750] px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:opacity-90"
           >
             Submit request
           </button>
         </form>
 
-        <p className="text-xs text-slate-500">
+        <p className="text-xs text-gray-500">
           For life-threatening emergencies, call your local rescue hotline immediately.
         </p>
       </section>
+
 
       <Modal
         isOpen={isHotlinesOpen}
