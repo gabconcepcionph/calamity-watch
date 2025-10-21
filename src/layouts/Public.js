@@ -34,7 +34,7 @@ export default function PublicLayout({ children }) {
           </nav>
         </div>
       </header>
-      <main className="px-6 py-0">
+      <main className="px-6 pt-0 pb-8">
         {children}
       </main>
     </div>

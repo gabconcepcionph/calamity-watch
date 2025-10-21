@@ -6,6 +6,7 @@ import askForHelpMock from '../store/mocks/ask-for-help.json';
 import { Icon } from 'leaflet';
 import Modal from '../components/Modal';
 import useHotlinesStore from '../store/useHotlinesStore';
+import { FiPhoneCall, FiPlusCircle } from 'react-icons/fi';
 
 const DEFAULT_CENTER = [14.5995, 120.9842]; // Manila fallback
 
@@ -232,9 +233,7 @@ export default function AskForHelp() {
               Additional photos <span className="text-xs font-normal text-gray-400">(optional)</span>
             </p>
             <label className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-gray-300 bg-gray-50 px-6 py-10 text-center text-sm text-gray-500 transition hover:border-[#E94D65]/50 hover:bg-rose-50">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-8 w-8 text-gray-400">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 16.5v-9m-4.5 4.5h9M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0Z" />
-              </svg>
+              <FiPlusCircle className="h-8 w-8 text-gray-400" />
               <span className="text-sm font-semibold text-gray-600">Upload photos</span>
               <span className="text-xs text-gray-400">PNG, JPG up to 10MB</span>
               <input type="file" name="photos" accept="image/png, image/jpeg" multiple className="hidden" />
@@ -260,37 +259,46 @@ export default function AskForHelp() {
         onClose={handleCloseHotlines}
         title="Emergency Hotlines"
       >
-        <div className="space-y-4 h-[calc(100vh-20rem)] overflow-y-auto text-sm">
-          <div className="sticky top-0 bg-white pb-4">
-            <label className="block text-left text-xs font-semibold uppercase tracking-wide text-slate-400">
-              Search hotlines
-              <input
-                type="search"
-                value={hotlineQuery}
-                onChange={(event) => setHotlineQuery(event.target.value)}
-                placeholder="Search by agency or contact number"
-                className="mt-2 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-700 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200"
-              />
-            </label>
-          </div>
+        <div className="space-y-4 h-[calc(100vh-20rem)] overflow-y-auto text-sm bg-[#F9F9FB] px-1">
+  {/* Search Header */}
+  <div className="sticky top-0 bg-[#F9F9FB] pb-4 pt-2">
+    <label className="block text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
+      Search hotlines
+      <input
+        type="search"
+        value={hotlineQuery}
+        onChange={(event) => setHotlineQuery(event.target.value)}
+        placeholder="Search by agency or contact number"
+        className="mt-2 w-full rounded-full border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-700 shadow-sm focus:border-[#E94D65] focus:ring-2 focus:ring-[#F4A1AC] focus:outline-none transition"
+      />
+    </label>
+  </div>
 
-          {filteredHotlines.length ? (
-            filteredHotlines.map(({ agency, contacts }) => (
-              <div key={agency} className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-left">
-                <p className="text-sm font-semibold text-slate-800">{agency}</p>
-                <ul className="mt-2 space-y-1 text-xs text-slate-500">
-                  {contacts.map((contact) => (
-                    <li key={contact}>{contact}</li>
-                  ))}
-                </ul>
-              </div>
-            ))
-          ) : (
-            <p className="rounded-xl border border-dashed border-rose-200 bg-rose-50/60 p-4 text-left text-xs font-medium text-rose-500">
-              No hotlines match your search. Try different keywords.
-            </p>
-          )}
+  {/* Hotline List */}
+  {filteredHotlines.length ? (
+    filteredHotlines.map(({ agency, contacts }) => (
+      <div
+          key={agency}
+          className="rounded-2xl border border-gray-100 bg-white p-4 text-left shadow-sm hover:shadow transition"
+        >
+          <p className="text-sm font-semibold text-gray-800">{agency}</p>
+          <ul className="mt-2 space-y-1 text-xs text-gray-500">
+            {contacts.map((contact) => (
+              <li key={contact} className="flex items-center gap-2">
+                <FiPhoneCall className="h-3.5 w-3.5 text-[#E94D65]" />
+                {contact}
+              </li>
+            ))}
+          </ul>
         </div>
+      ))
+    ) : (
+      <p className="rounded-2xl border border-dashed border-[#F4A1AC] bg-rose-50/80 p-4 text-left text-xs font-medium text-[#E94D65]">
+        No hotlines match your search. Try different keywords.
+      </p>
+    )}
+  </div>
+
       </Modal>
     </PublicLayout>
   );
